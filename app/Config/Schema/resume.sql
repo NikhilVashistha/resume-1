@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 15, 2016 at 05:54 PM
+-- Generation Time: Jul 07, 2016 at 06:07 PM
 -- Server version: 5.5.43-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.14
 
@@ -29,16 +29,17 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `colors` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
   `user_id` int(4) NOT NULL,
-  `color` varchar(10) NOT NULL,
+  `look_id` int(4) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `colors`
 --
 
-INSERT INTO `colors` (`id`, `user_id`, `color`) VALUES
-(1, 2, 'Red');
+INSERT INTO `colors` (`id`, `user_id`, `look_id`) VALUES
+(1, 2, 1),
+(2, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -120,6 +121,26 @@ CREATE TABLE IF NOT EXISTS `interests` (
   `interest` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `looks`
+--
+
+CREATE TABLE IF NOT EXISTS `looks` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `name` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `looks`
+--
+
+INSERT INTO `looks` (`id`, `name`) VALUES
+(1, 'Red'),
+(2, 'Blue');
 
 -- --------------------------------------------------------
 
